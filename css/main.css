@@ -1,0 +1,130 @@
+#top-banner {
+	margin: 10px auto 0;
+	width: 300px;
+	text-align: center;
+}
+
+#logo {
+	display: block;
+	margin: 0 auto;
+	width: 220px;
+}
+
+#tag-line {
+	font-family: "Roboto Slab", serif;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 20px;
+	line-height: 145%;
+}
+.quiz-container {
+	width: 350px;
+	height: 450px;
+	margin: 50px auto 0;
+	/*border: 1px solid black; */
+}
+
+.number-container {
+	width: 40px;
+	height: 40px;
+	background-color: black;
+	border-radius: 50%;
+	margin-top: -10px;
+	margin-left: -25px;
+	text-align: center;
+	position: absolute;
+}
+
+.number-container > p {
+	color: white;
+	font-family: broadway, 'Roboto Slab', serif;
+	font-size: 22px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.question-container {
+	height: 135px;
+	background-color: #FFFF66;
+}
+
+.question-container > p {
+	padding: 20px 25px 25px 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 17px;
+	line-height: 1.5;
+}
+.answer-container {
+	height: 315px;
+	background-color: #D1D1CB;
+}
+.answer-container > ul {
+	padding: 25px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 17px;
+	font-weight: bold;
+}
+.submit-button {
+	width: 85px;
+	height: 85px;
+	background-color: black;
+	border-radius: 50%;
+	position: absolute;
+	margin-left: 132.5px;
+	margin-top: -42px;
+}
+
+.submit-button > a {
+	color: white;
+	font-family: broadway, Roboto Slab, serif;
+	font-size: 19px;
+	text-align: center;
+	padding-top: 33px;
+	text-transform: uppercase;
+	display: block;
+	text-decoration: none;
+}
+
+.submit-button > a:focus, .submit-button > a:hover {
+	color: #FFFF66;
+}
+
+.final-score {
+	width: 300px;
+	height: 300px;
+	background-color: black;
+	color: white;
+	border-radius: 50%;
+	margin: 65px auto;
+	text-align: center;
+	display: none;
+}
+
+#total-score {
+	padding-top: 65px;
+	font-family: broadway, 'open sans', sans-serif;
+	font-size: 70px;
+	font-weight: bold;
+}
+
+#punchline {
+	margin-top: 20px;
+	font-family: 'roboto slab', serif;
+	font-size: 29px;
+	font-weight: bold;
+}
+
+.final-score button {
+	margin-top: 35px;
+	font-family: 'open sans';
+	font-size: 18px;
+	font-weight: bold;
+	background-color: #D1D1CB;
+	border: none; 
+	height: 1.7em;
+}
+
+.final-score button:hover {
+	background-color: #FFFF66;
+	cursor: pointer;
