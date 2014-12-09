@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href='http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans' rel='stylesheet' type='text/css'>
-	<script src="http://code.jquery.com/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="js/app.js"></script>
 </head>
 <body>
@@ -17,27 +17,24 @@
 	</header>
 	<div class="final-score">
 		<p id="total-score"><span id="num-correct">x</span>/10</p>
-		<p id="punchline">You're a <span id="nickname">hack!</span></p>
-		<button>Try again?</button>
+		<p id="punchline">Comedy status:</p>
+		<p id="nickname">Hack</p>
+		<button id="new-game">Try again?</button>
 	</div>
 	<section class="quiz-container">
 		<div class="number-container">
 			<p>1</p>
 		</div>
 		<div class="question-container">
-			<p>Sample question goes here.</p>
+			<p></p>
 		</div>
 		<div class="answer-container">
-			<ul>
-				<li>
-					<input type="radio" name="answer" value="Sample">Here's a sample answer.
-				</li>
+			<ul id="option-list">
 			</ul>
 		</div>
 		<div class="submit-button">
 			<a href="#">submit</a>
 		</div>
-		
 	</section>
 </body>
 </html>

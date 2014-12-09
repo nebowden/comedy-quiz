@@ -16,10 +16,11 @@
 	font-weight: bold;
 	margin-top: 20px;
 	line-height: 145%;
+	font-style: italic;
 }
 .quiz-container {
 	width: 350px;
-	height: 450px;
+	height: 470px;
 	margin: 50px auto 0;
 	/*border: 1px solid black; */
 }
@@ -44,7 +45,7 @@
 }
 
 .question-container {
-	height: 135px;
+	min-height: 145px;
 	background-color: #FFFF66;
 }
 
@@ -52,27 +53,30 @@
 	padding: 20px 25px 25px 30px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
-	font-size: 17px;
+	font-size: 18px;
 	line-height: 1.5;
 }
 .answer-container {
-	height: 315px;
+	min-height: 280px;
 	background-color: #D1D1CB;
 }
 .answer-container > ul {
 	padding: 25px;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 17px;
+	font-size: 18px;
 	font-weight: bold;
+	line-height: 2;
+}
+
+.list-indent {
+	margin-left: 21px;
 }
 .submit-button {
 	width: 85px;
 	height: 85px;
 	background-color: black;
 	border-radius: 50%;
-	position: absolute;
-	margin-left: 132.5px;
-	margin-top: -42px;
+	margin: -42px auto;
 }
 
 .submit-button > a {
@@ -84,9 +88,12 @@
 	text-transform: uppercase;
 	display: block;
 	text-decoration: none;
+	height: 52px;
+	width: 85px;
+	border-radius: 50%;
 }
 
-.submit-button > a:focus, .submit-button > a:hover {
+.submit-button > a:hover {
 	color: #FFFF66;
 }
 
@@ -96,13 +103,14 @@
 	background-color: black;
 	color: white;
 	border-radius: 50%;
+	border-color: #FFFF66;
 	margin: 65px auto;
 	text-align: center;
 	display: none;
 }
 
 #total-score {
-	padding-top: 65px;
+	padding-top: 55px;
 	font-family: broadway, 'open sans', sans-serif;
 	font-size: 70px;
 	font-weight: bold;
@@ -110,15 +118,22 @@
 
 #punchline {
 	margin-top: 20px;
+	font-family: 'open sans', sans-serif;
+	font-size: 20px;
+	color: #D1D1CB;
+}
+
+#nickname {
 	font-family: 'roboto slab', serif;
-	font-size: 29px;
+	font-size: 40px;
+	margin-top: 4px;
 	font-weight: bold;
 }
 
 .final-score button {
-	margin-top: 35px;
+	margin-top: 28px;
 	font-family: 'open sans';
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: bold;
 	background-color: #D1D1CB;
 	border: none; 
@@ -128,3 +143,14 @@
 .final-score button:hover {
 	background-color: #FFFF66;
 	cursor: pointer;
+}
+
+.selected {
+	font-weight: bold;
+}
+
+@media only screen and (max-width: 350px) {
+	.quiz-container {
+		width: 90%;
+	}
+}
