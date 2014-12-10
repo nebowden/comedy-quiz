@@ -215,7 +215,7 @@ $(document).ready(function(){
 			setTimeout(function(){
 
 				$(".submit-button > a").html("submit");
-				$(".submit-button > a").css({"padding-top":"33px", "color":"white"});
+				$(".submit-button > a").css({"padding-top":"", "color":""});
 
 				if (questionNumber > 9) {
 
