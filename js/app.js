@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 	var required = "You must select an answer before submitting.";
 
+	
 	/*question number counter*/
 
 	var questionNumber = 1;
@@ -13,6 +14,7 @@ $(document).ready(function(){
 		$(".number-container > p").text(questionNumber);
 	};
 
+	
 	/*question object constructor*/
 
 	function Question(questionText, optionOne, optionTwo, optionThree, optionFour, correctAnswer) {
@@ -114,6 +116,7 @@ $(document).ready(function(){
 		'answerB'
 	);
 
+	
 	/*question array*/
 
 	var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen];
@@ -132,10 +135,12 @@ $(document).ready(function(){
 		submitButtonFocus();
 	};
 
+	
 	/*set question array number to 0*/
 
 	var arrayCount=0;
 
+	
 	/*function for displaying next question*/
 
 	var generateQuestion = function() {
@@ -148,6 +153,7 @@ $(document).ready(function(){
 		$("#option-list").append("<li><input type='radio' name='answer' id='answerD'>" + questions[arrayCount].optionFour + "</li>");		
 	};
 
+	
 	/*function for displaying player's final score*/
 
 	var displayScore = function() {
@@ -168,10 +174,12 @@ $(document).ready(function(){
 
 	};	
 
+	
 	/* setting number of correct answers to 0*/
 
 	var correctCount = 0;
 
+	
 	/*function for focusing on highlighting selection and submitting button after an option has been selected*/
 
 	var submitButtonFocus = function() {
@@ -182,10 +190,13 @@ $(document).ready(function(){
 		});
 	};
 
+
 	/*display first question*/
 
 	generateQuestion();
 
+
+	/*game play*/
 
 	$("#new-game").on("click", function(){
 		newGame();
@@ -234,11 +245,10 @@ $(document).ready(function(){
 					submitButtonFocus();
 			
 				};
+
 			}, 1000);
 
 		}; 
 
 	});
 });
-
-/*<i class="fa fa-check"></i>*/
