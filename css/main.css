@@ -50,7 +50,7 @@
 }
 
 .question-container > p {
-	padding: 20px 25px 25px 30px;
+	padding: 20px 25px 15px 30px;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	font-size: 18px;
@@ -93,8 +93,12 @@
 	border-radius: 50%;
 }
 
-.submit-button > a:hover {
+.submit-button > a:hover, .submit-button > a:focus {
 	color: #FFFF66;
+}
+
+.submit-button > a:focus {
+	outline: none;
 }
 
 .final-score {
@@ -149,8 +153,11 @@
 	font-weight: bold;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 400px) {
 	.quiz-container {
 		width: 90%;
+	}
+	.number-container {
+		margin-left: -16px;
 	}
 }

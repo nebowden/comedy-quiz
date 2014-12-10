@@ -21,7 +21,7 @@ $(document).ready(function(){
 		this.optionTwo = optionTwo;
 		this.optionThree = optionThree;
 		this.optionFour = optionFour;
-		var correct answer
+		this.correctAnswer = correctAnswer;
 	};*/
 
 	var questionOne = {
@@ -130,6 +130,7 @@ $(document).ready(function(){
 		generateQuestion();
 		$('.quiz-container').show();
 		$('.final-score').hide();
+		submitButtonFocus();
 	};
 
 	var i=0;
@@ -164,6 +165,13 @@ $(document).ready(function(){
 		newGame();
 	});
 
+	var submitButtonFocus = function() {
+		$("input[name=answer]:radio").on("click", function() {
+			$(".submit-button > a").focus();
+		});
+	};
+
+	submitButtonFocus();
 
 	$(".submit-button").click(function(event){
 
@@ -202,7 +210,11 @@ $(document).ready(function(){
 
 			generateQuestion();
 
-			questionCount();		
+			questionCount();
+
+			$(".submit-button > a").blur();	
+
+			submitButtonFocus();
 	
 		};
 	}; 
