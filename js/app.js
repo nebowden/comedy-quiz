@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
-	/*message for required entry*/
+	/*message for required selection of answer*/
+
 	var required = "You must select an answer before submitting.";
 
-	/*question number*/
+	/*question number counter*/
 
 	var questionNumber = 1;
 
@@ -12,118 +13,116 @@ $(document).ready(function(){
 		$(".number-container > p").text(questionNumber);
 	};
 
-	/*correct answer counter*/
+	/*question object constructor*/
 
-	/*question objects*/
-	/*function Question(questionText, optionOne, optionTwo, optionThree, optionFour) {
+	function Question(questionText, optionOne, optionTwo, optionThree, optionFour, correctAnswer) {
 		this.questionText = questionText;
 		this.optionOne = optionOne;
 		this.optionTwo = optionTwo;
 		this.optionThree = optionThree;
 		this.optionFour = optionFour;
 		this.correctAnswer = correctAnswer;
-	};*/
-
-	var questionOne = {
-		question: "Which one of the following is not a nickname for longtime comedian, Don Rickles?",
-		optionOne: 'Mr. Warmth',
-		optionTwo: 'The Merchant of Venom',
-		optionThree: 'The Roastmaster General', 
-		optionFour: 'Glass Head',
-		correctAnswer: 'answerC'
 	};
 
-	var questionTwo = {
-		question: "Comedians such as Louis CK, Chris Rock and Dave Chapelle frequently drop in to this NYC comedy club to work on material.",
-		optionOne: 'Comic Strip Live',
-		optionTwo: 'The Comedy Cellar',
-		optionThree: 'Dangerfields',
-		optionFour: 'The Pit',
-		correctAnswer: 'answerB'
-	};
+	var questionOne = new Question(
+		"Which one of the following is not a nickname for longtime comedian, Don Rickles?",
+		'Mr. Warmth',
+		'The Merchant of Venom',
+		'The Roastmaster General', 
+		'Glass Head',
+		'answerC'
+	);
 
-	var questionThree = {
-		question: 'What was Sam Kinison’s profession before he became a stand-up comedian?',
-		optionOne: 'Plumber',
-		optionTwo: 'High School Teacher',
-		optionThree: 'Accountant',
-		optionFour: 'Preacher',
-		correctAnswer: 'answerD'
-	};
+	var questionTwo = new Question(
+		"Comedians such as Louis CK, Chris Rock and Dave Chapelle frequently drop in to this NYC comedy club to work on material.",
+		'Comic Strip Live',
+		'The Comedy Cellar',
+		'Dangerfields',
+		'The Pit',
+		'answerB'
+	);
 
-	var questionFour = {
-		question: 'This comedian was once arrested for performing his “Seven Words You Can Never Say on Television” routine.',
-		optionOne: 'Andrew Dice Clay',
-		optionTwo: 'George Carlin',
-		optionThree: 'Lenny Bruce',
-		optionFour: 'Bill Hicks',
-		correctAnswer: 'answerB'
-	};
+	var questionThree = new Question(
+		'What was Sam Kinison’s profession before he became a stand-up comedian?',
+		'Plumber',
+		'High School Teacher',
+		'Accountant',
+		'Preacher',
+		'answerD'
+	);
 
-	var questionFive = {
-		question: 'Steve Martin was known for wearing all but which of the following objects on his head as part of his act?',
-		optionOne: 'A dunce cap',
-		optionTwo: 'An arrow',
-		optionThree: 'Bunny ears',
-		optionFour: 'Balloon animals',
-		correctAnswer: 'answerA'
-	};
+	var questionFour = new Question(
+		'This comedian was once arrested for performing his “Seven Words You Can Never Say on Television” routine.',
+		'Andrew Dice Clay',
+		'George Carlin',
+		'Lenny Bruce',
+		'Bill Hicks',
+		'answerB'
+	);
 
-	var questionSix = {
-		question: 'Eddie Murphy, Aziz Ansari and Dane Cook are three of only a handful of comedians who have played this historic NYC venue.',
-		optionOne: 'Carnegie Hall',
-		optionTwo: 'Yankee Stadium',
-		optionThree: 'Madison Square Garden', 
-		optionFour: 'Radio City Music Hall',
-		correctAnswer: 'answerC'
-	};
+	var questionFive = new Question(
+		'Steve Martin was known for wearing all but which of the following objects on his head as part of his act?',
+		'A dunce cap',
+		'An arrow',
+		'Bunny ears',
+		'Balloon animals',
+		'answerA'
+	);
 
-	var questionSeven = {
-		question: 'Sarah Silverman made a video entitled “The Great Schlep” in support of what presidential hopeful?',
-		optionOne: 'Joe Lieberman',
-		optionTwo: 'Hillary Clinton',
-		optionThree: 'John McCain', 
-		optionFour: 'Barack Obama',
-		correctAnswer: 'answerD'
-	};
+	var questionSix = new Question (
+		'Eddie Murphy, Aziz Ansari and Dane Cook are three of only a handful of comedians who have played this historic NYC venue.',
+		'Carnegie Hall',
+		'Yankee Stadium',
+		'Madison Square Garden', 
+		'Radio City Music Hall',
+		'answerC'
+	);
 
-	var questionEight = {
-		question: 'Which one of these stand-up comedians was a writer on the movie “Blazing Saddles”?',
-		optionOne: 'Richard Pryor',
-		optionTwo: 'Shecky Greene',
-		optionThree: 'Joan Rivers', 
-		optionFour: 'Buddy Hackett',
-		correctAnswer: 'answerA'
-	};
+	var questionSeven = new Question (
+		'Sarah Silverman made a video entitled “The Great Schlep” in support of what presidential hopeful?',
+		'Joe Lieberman',
+		'Hillary Clinton',
+		'John McCain', 
+		'Barack Obama',
+		'answerD'
+	);
 
-	var questionNine = {
-		question: 'Which one of the following is the largest international comedy festival in the world?',
-		optionOne: 'Edinburgh Festival Fringe',
-		optionTwo: 'Melbourne International <span class="list-indent">Comedy Festival</span>',
-		optionThree: 'Los Angeles Comedy Festival', 
-		optionFour: 'Just For Laughs Montreal',
-		correctAnswer: 'answerD'
-	};
+	var questionEight = new Question (
+		'Which one of these stand-up comedians was a writer on the movie “Blazing Saddles”?',
+		'Richard Pryor',
+		'Shecky Greene',
+		'Joan Rivers', 
+		'Buddy Hackett',
+		'answerA'
+	);
 
-	var questionTen = {
-		question: 'Which comedian is known to refer to her mental illness and time spent in a psychiatric ward as part of her act?',
-		optionOne: 'Chelsea Peretti',
-		optionTwo: 'Maria Bamford',
-		optionThree: 'Kathy Griffin', 
-		optionFour: 'Tig Notaro',
-		correctAnswer: 'answerB'
-	};
+	var questionNine = new Question (
+		'Which one of the following is the largest international comedy festival in the world?',
+		'Edinburgh Festival Fringe',
+		'Melbourne International <span class="list-indent">Comedy Festival</span>',
+		'Los Angeles Comedy Festival', 
+		'Just For Laughs Montreal',
+		'answerD'
+	);
 
-	/*cycling questions*/
+	var questionTen = new Question (
+		'Which comedian is known to refer to her mental illness and time spent in a psychiatric ward as part of her act?',
+		'Chelsea Peretti',
+		'Maria Bamford',
+		'Kathy Griffin', 
+		'Tig Notaro',
+		'answerB'
+	);
+
+	/*question array*/
 
 	var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen];
 
-	/*display score*/
 
-	/*start new game*/
+	/*start new game function*/
 
 	var newGame = function() {
-		i = 0;
+		arrayCount = 0;
 		questionNumber = 1;
 		correctCount=0;
 		$(".number-container > p").text(questionNumber);
@@ -133,43 +132,64 @@ $(document).ready(function(){
 		submitButtonFocus();
 	};
 
-	var i=0;
+	/*set question array number to 0*/
+
+	var arrayCount=0;
+
+	/*function for displaying next question*/
 
 	var generateQuestion = function() {
 
 		$("#option-list").find("li").remove();
-		$(".question-container > p").text(questions[i].question);
-		$("#option-list").append("<li><input type='radio' name='answer' id='answerA' required>" + questions[i].optionOne + "</li>");
-		$("#option-list").append("<li><input type='radio' name='answer' id='answerB'>" + questions[i].optionTwo + "</li>");
-		$("#option-list").append("<li><input type='radio' name='answer' id='answerC'>" + questions[i].optionThree + "</li>");
-		$("#option-list").append("<li><input type='radio' name='answer' id='answerD'>" + questions[i].optionFour + "</li>");		
+		$(".question-container > p").text(questions[arrayCount].questionText);
+		$("#option-list").append("<li><input type='radio' name='answer' id='answerA' required>" + questions[arrayCount].optionOne + "</li>");
+		$("#option-list").append("<li><input type='radio' name='answer' id='answerB'>" + questions[arrayCount].optionTwo + "</li>");
+		$("#option-list").append("<li><input type='radio' name='answer' id='answerC'>" + questions[arrayCount].optionThree + "</li>");
+		$("#option-list").append("<li><input type='radio' name='answer' id='answerD'>" + questions[arrayCount].optionFour + "</li>");		
 	};
 
-	/*var changeQuestion = function () {
+	/*function for displaying player's final score*/
 
-	};*/
+	var displayScore = function() {
 
-	
+		if (correctCount > 8) {
+				$('#nickname').text("Headliner");
+			} else if (correctCount > 5) {
+				$('#nickname').text("Feature Act");
+			} else if (correctCount > 2) {
+				$('#nickname').text("Opener");
+			};
 
-	/*var compareAnswer = function () {
+			$('.quiz-container').hide();
 
-	};*/
+			$('#num-correct').text(correctCount);
 
-	
+			$('.final-score').fadeIn(900);
+
+	};	
+
+	/* setting number of correct answers to 0*/
 
 	var correctCount = 0;
 
+	/*function for focusing on highlighting selection and submitting button after an option has been selected*/
+
+	var submitButtonFocus = function() {
+		$("input[name=answer]:radio").on("click", function() {
+			$(this).closest("ul").find("li").removeClass("selected");
+			$(this).closest("li").addClass("selected");
+			$(".submit-button > a").focus();
+		});
+	};
+
+	/*display first question*/
+
 	generateQuestion();
+
 
 	$("#new-game").on("click", function(){
 		newGame();
 	});
-
-	var submitButtonFocus = function() {
-		$("input[name=answer]:radio").on("click", function() {
-			$(".submit-button > a").focus();
-		});
-	};
 
 	submitButtonFocus();
 
@@ -183,40 +203,42 @@ $(document).ready(function(){
 			alert("Please select an answer before submitting.")
 		} else {
 
-		if (userAnswer ==  questions[i].correctAnswer) {
-				correctCount = correctCount + 1;
-				console.log(correctCount);
-			};
+			if (userAnswer ==  questions[arrayCount].correctAnswer) {
+					correctCount = correctCount + 1;
+					$(".submit-button > a").html("<i class='fa fa-check fa-4x'></i>");
+					$(".submit-button > a").css({"padding-top":"9px", "color":"#77FF66"});
+				} else {
+					$(".submit-button > a").html("<i class='fa fa-times fa-4x'></i>");
+					$(".submit-button > a").css({"padding-top":"4px", "color":"#CC1C18"})
+				};
 
-		if (questionNumber > 9) {
+			setTimeout(function(){
 
-			if (correctCount > 8) {
-				$('#nickname').text("Headliner");
-			} else if (correctCount > 5) {
-				$('#nickname').text("Feature Act");
-			} else if (correctCount > 2) {
-				$('#nickname').text("Opener");
-			};
+				$(".submit-button > a").html("submit");
+				$(".submit-button > a").css({"padding-top":"33px", "color":"white"});
 
-			$('.quiz-container').hide();
+				if (questionNumber > 9) {
 
-			$('#num-correct').text(correctCount);
+					displayScore();
+					
+				} else {			
 
-			$('.final-score').fadeIn(900);
+					arrayCount = arrayCount+1;
+
+					generateQuestion();
+
+					questionCount();
+
+					$(".submit-button > a").blur();	
+
+					submitButtonFocus();
 			
-		} else {			
+				};
+			}, 1000);
 
-			i = i+1;
+		}; 
 
-			generateQuestion();
-
-			questionCount();
-
-			$(".submit-button > a").blur();	
-
-			submitButtonFocus();
-	
-		};
-	}; 
 	});
 });
+
+/*<i class="fa fa-check"></i>*/

@@ -1,4 +1,21 @@
-#top-banner {
+/*font styling*/
+
+#tag-line, #nickname {
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+}
+
+.number-container > p, .submit-button > a {
+	font-family: broadway, 'Roboto Slab', serif;
+}
+
+.question-container > p, .answer-container > ul, #punchline, #new-game {
+ 	font-family: 'Open Sans', sans-serif;
+}
+
+/*header styling*/
+
+.top-banner {
 	margin: 10px auto 0;
 	width: 300px;
 	text-align: center;
@@ -11,18 +28,18 @@
 }
 
 #tag-line {
-	font-family: "Roboto Slab", serif;
 	font-size: 20px;
-	font-weight: bold;
 	margin-top: 20px;
 	line-height: 145%;
 	font-style: italic;
 }
+
+/*quiz box styling*/
+
 .quiz-container {
 	width: 350px;
 	height: 470px;
 	margin: 50px auto 0;
-	/*border: 1px solid black; */
 }
 
 .number-container {
@@ -38,7 +55,6 @@
 
 .number-container > p {
 	color: white;
-	font-family: broadway, 'Roboto Slab', serif;
 	font-size: 22px;
 	text-align: center;
 	padding-top: 10px;
@@ -51,7 +67,6 @@
 
 .question-container > p {
 	padding: 20px 25px 15px 30px;
-	font-family: 'Open Sans', sans-serif;
 	font-weight: bold;
 	font-size: 18px;
 	line-height: 1.5;
@@ -62,9 +77,8 @@
 }
 .answer-container > ul {
 	padding: 25px;
-	font-family: 'Open Sans', sans-serif;
 	font-size: 18px;
-	font-weight: bold;
+	/*font-weight: bold;*/
 	line-height: 2;
 }
 
@@ -81,7 +95,6 @@
 
 .submit-button > a {
 	color: white;
-	font-family: broadway, Roboto Slab, serif;
 	font-size: 19px;
 	text-align: center;
 	padding-top: 33px;
@@ -100,6 +113,12 @@
 .submit-button > a:focus {
 	outline: none;
 }
+
+.selected {
+	font-weight: bold;
+}
+
+/*final score box styling*/
 
 .final-score {
 	width: 300px;
@@ -122,21 +141,17 @@
 
 #punchline {
 	margin-top: 20px;
-	font-family: 'open sans', sans-serif;
 	font-size: 20px;
 	color: #D1D1CB;
 }
 
 #nickname {
-	font-family: 'roboto slab', serif;
 	font-size: 40px;
 	margin-top: 4px;
-	font-weight: bold;
 }
 
-.final-score button {
+#new-game {
 	margin-top: 28px;
-	font-family: 'open sans';
 	font-size: 16px;
 	font-weight: bold;
 	background-color: #D1D1CB;
@@ -144,14 +159,12 @@
 	height: 1.7em;
 }
 
-.final-score button:hover {
+#new-game:hover {
 	background-color: #FFFF66;
 	cursor: pointer;
 }
 
-.selected {
-	font-weight: bold;
-}
+/*media queries*/
 
 @media only screen and (max-width: 400px) {
 	.quiz-container {
