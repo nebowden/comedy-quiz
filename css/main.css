@@ -105,11 +105,8 @@
 	border-radius: 50%;
 }
 
-.submit-button > a:hover, .submit-button > a:focus {
-	color: #FFFF66;
-}
-
 .submit-button > a:focus {
+	color: #FFFF66;
 	outline: none;
 }
 

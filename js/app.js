@@ -191,23 +191,9 @@ $(document).ready(function(){
 	};
 
 
-	/*display first question*/
+/*function for cycling through questions*/
 
-	generateQuestion();
-
-
-	/*game play*/
-
-	$("#new-game").on("click", function(){
-		newGame();
-	});
-
-	submitButtonFocus();
-
-	$(".submit-button").click(function(event){
-
-		event.preventDefault();
-
+	var cycleQuestions = function() {
 		var userAnswer = $("input[type=radio][name=answer]:checked").attr('id');
 
 		if ($("input[type=radio][name=answer]:checked").length == 0) {
@@ -221,7 +207,7 @@ $(document).ready(function(){
 				} else {
 					$(".submit-button > a").html("<i class='fa fa-times fa-4x'></i>");
 					$(".submit-button > a").css({"padding-top":"4px", "color":"#CC1C18"})
-				};
+			};
 
 			setTimeout(function(){
 
@@ -249,6 +235,33 @@ $(document).ready(function(){
 			}, 1000);
 
 		}; 
+	};
+
+
+	/*display first question*/
+
+	generateQuestion();
+
+
+	/*call new game on click of "try again"*/
+
+	$("#new-game").on("click", function(){
+		newGame();
+	});
+
+	
+	/*call function for highlighting answer and submit button on selection*/
+
+	submitButtonFocus();
+
+
+	/*behavior on user clicking submit*/
+
+	$(".submit-button").click(function(event){
+
+		event.preventDefault();
+
+		cycleQuestions();
 
 	});
 });
